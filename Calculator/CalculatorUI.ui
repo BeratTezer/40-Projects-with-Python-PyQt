@@ -39,7 +39,7 @@
     </size>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(72, 28, 52);</string>
+    <string notr="true"/>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <property name="spacing">
@@ -71,6 +71,11 @@
         <height>100</height>
        </size>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame {
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 #5a677b, stop:1 rgba(90, 121, 116, 255));
+}</string>
+      </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
@@ -79,7 +84,19 @@
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <item>
-        <widget class="QLabel" name="label">
+        <widget class="QLabel" name="screenLabel">
+         <property name="font">
+          <font>
+           <family>Berlin Sans FB Demi</family>
+           <pointsize>36</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(105, 151, 149);
+border: 2px solid #3a5258;
+border-radius: 10px;</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -90,6 +107,32 @@
     </item>
     <item>
      <widget class="QFrame" name="panel">
+      <property name="styleSheet">
+       <string notr="true">QFrame {
+	background-color: #5a677b;
+}
+
+QPushButton {
+        background-color: #496b72;
+        color: white;
+        border: 2px solid #3a5258;
+        border-radius: 10px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    QPushButton:hover {
+        background-color: #699795;
+        color: white;
+        border: 2px solid #3a5258;
+    }
+
+    QPushButton:pressed {
+        background-color: #3a5258;
+        color: white;
+        border: 2px solid #3a5258;
+    }</string>
+      </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
@@ -122,7 +165,7 @@
            <number>0</number>
           </property>
           <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_3">
+           <widget class="QPushButton" name="multiplyButton">
             <property name="maximumSize">
              <size>
               <width>78</width>
@@ -131,6 +174,9 @@
             </property>
             <property name="text">
              <string>*</string>
+            </property>
+            <property name="shortcut">
+             <string>*, *</string>
             </property>
            </widget>
           </item>
@@ -162,7 +208,7 @@
            <number>0</number>
           </property>
           <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_29">
+           <widget class="QPushButton" name="oneButton">
             <property name="maximumSize">
              <size>
               <width>78</width>
@@ -170,6 +216,9 @@
              </size>
             </property>
             <property name="text">
+             <string>1</string>
+            </property>
+            <property name="shortcut">
              <string>1</string>
             </property>
            </widget>
@@ -202,7 +251,7 @@
            <number>0</number>
           </property>
           <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_26">
+           <widget class="QPushButton" name="fourButton">
             <property name="maximumSize">
              <size>
               <width>78</width>
@@ -210,6 +259,9 @@
              </size>
             </property>
             <property name="text">
+             <string>4</string>
+            </property>
+            <property name="shortcut">
              <string>4</string>
             </property>
            </widget>
@@ -242,7 +294,7 @@
            <number>0</number>
           </property>
           <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_41">
+           <widget class="QPushButton" name="threeButton">
             <property name="maximumSize">
              <size>
               <width>78</width>
@@ -250,6 +302,9 @@
              </size>
             </property>
             <property name="text">
+             <string>3</string>
+            </property>
+            <property name="shortcut">
              <string>3</string>
             </property>
            </widget>
@@ -282,7 +337,7 @@
            <number>0</number>
           </property>
           <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_4">
+           <widget class="QPushButton" name="plusButton">
             <property name="maximumSize">
              <size>
               <width>78</width>
@@ -291,6 +346,9 @@
             </property>
             <property name="text">
              <string>+</string>
+            </property>
+            <property name="shortcut">
+             <string>Ctrl+Shift+4, +</string>
             </property>
            </widget>
           </item>
@@ -322,7 +380,7 @@
            <number>0</number>
           </property>
           <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_40">
+           <widget class="QPushButton" name="nineButton">
             <property name="maximumSize">
              <size>
               <width>78</width>
@@ -330,6 +388,9 @@
              </size>
             </property>
             <property name="text">
+             <string>9</string>
+            </property>
+            <property name="shortcut">
              <string>9</string>
             </property>
            </widget>
@@ -362,7 +423,7 @@
            <number>0</number>
           </property>
           <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_35">
+           <widget class="QPushButton" name="twoButton">
             <property name="maximumSize">
              <size>
               <width>78</width>
@@ -370,6 +431,9 @@
              </size>
             </property>
             <property name="text">
+             <string>2</string>
+            </property>
+            <property name="shortcut">
              <string>2</string>
             </property>
            </widget>
@@ -402,7 +466,7 @@
            <number>0</number>
           </property>
           <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_28">
+           <widget class="QPushButton" name="sevenButton">
             <property name="maximumSize">
              <size>
               <width>78</width>
@@ -410,6 +474,9 @@
              </size>
             </property>
             <property name="text">
+             <string>7</string>
+            </property>
+            <property name="shortcut">
              <string>7</string>
             </property>
            </widget>
@@ -442,7 +509,7 @@
            <number>0</number>
           </property>
           <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_38">
+           <widget class="QPushButton" name="sixButton">
             <property name="maximumSize">
              <size>
               <width>78</width>
@@ -450,6 +517,9 @@
              </size>
             </property>
             <property name="text">
+             <string>6</string>
+            </property>
+            <property name="shortcut">
              <string>6</string>
             </property>
            </widget>
@@ -482,7 +552,7 @@
            <number>0</number>
           </property>
           <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_33">
+           <widget class="QPushButton" name="cButton">
             <property name="maximumSize">
              <size>
               <width>78</width>
@@ -491,6 +561,9 @@
             </property>
             <property name="text">
              <string>C</string>
+            </property>
+            <property name="shortcut">
+             <string>Space</string>
             </property>
            </widget>
           </item>
@@ -522,7 +595,7 @@
            <number>0</number>
           </property>
           <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_27">
+           <widget class="QPushButton" name="ceButton">
             <property name="maximumSize">
              <size>
               <width>78</width>
@@ -531,6 +604,9 @@
             </property>
             <property name="text">
              <string>CE</string>
+            </property>
+            <property name="shortcut">
+             <string>Esc</string>
             </property>
            </widget>
           </item>
@@ -562,7 +638,7 @@
            <number>0</number>
           </property>
           <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_34">
+           <widget class="QPushButton" name="eightButton">
             <property name="maximumSize">
              <size>
               <width>78</width>
@@ -570,6 +646,9 @@
              </size>
             </property>
             <property name="text">
+             <string>8</string>
+            </property>
+            <property name="shortcut">
              <string>8</string>
             </property>
            </widget>
@@ -602,7 +681,7 @@
            <number>0</number>
           </property>
           <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_36">
+           <widget class="QPushButton" name="zeroButton">
             <property name="maximumSize">
              <size>
               <width>78</width>
@@ -610,6 +689,9 @@
              </size>
             </property>
             <property name="text">
+             <string>0</string>
+            </property>
+            <property name="shortcut">
              <string>0</string>
             </property>
            </widget>
@@ -642,7 +724,7 @@
            <number>0</number>
           </property>
           <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton">
+           <widget class="QPushButton" name="percentButton">
             <property name="minimumSize">
              <size>
               <width>78</width>
@@ -651,6 +733,9 @@
             </property>
             <property name="text">
              <string>%</string>
+            </property>
+            <property name="shortcut">
+             <string>Ctrl+Shift+5</string>
             </property>
            </widget>
           </item>
@@ -682,7 +767,7 @@
            <number>0</number>
           </property>
           <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_42">
+           <widget class="QPushButton" name="equalButton">
             <property name="maximumSize">
              <size>
               <width>78</width>
@@ -691,6 +776,9 @@
             </property>
             <property name="text">
              <string>=</string>
+            </property>
+            <property name="shortcut">
+             <string>Return, Enter</string>
             </property>
            </widget>
           </item>
@@ -722,7 +810,7 @@
            <number>0</number>
           </property>
           <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_32">
+           <widget class="QPushButton" name="fiveButton">
             <property name="maximumSize">
              <size>
               <width>78</width>
@@ -730,6 +818,9 @@
              </size>
             </property>
             <property name="text">
+             <string>5</string>
+            </property>
+            <property name="shortcut">
              <string>5</string>
             </property>
            </widget>
@@ -762,7 +853,7 @@
            <number>0</number>
           </property>
           <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_39">
+           <widget class="QPushButton" name="backspaceButton">
             <property name="maximumSize">
              <size>
               <width>78</width>
@@ -771,6 +862,9 @@
             </property>
             <property name="text">
              <string>⇚</string>
+            </property>
+            <property name="shortcut">
+             <string>Backspace</string>
             </property>
            </widget>
           </item>
@@ -802,7 +896,7 @@
            <number>0</number>
           </property>
           <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_6">
+           <widget class="QPushButton" name="minusButton">
             <property name="maximumSize">
              <size>
               <width>78</width>
@@ -811,6 +905,9 @@
             </property>
             <property name="text">
              <string>-</string>
+            </property>
+            <property name="shortcut">
+             <string>-, -</string>
             </property>
            </widget>
           </item>
@@ -842,7 +939,7 @@
            <number>0</number>
           </property>
           <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_2">
+           <widget class="QPushButton" name="divideButton">
             <property name="maximumSize">
              <size>
               <width>78</width>
@@ -851,6 +948,9 @@
             </property>
             <property name="text">
              <string>/</string>
+            </property>
+            <property name="shortcut">
+             <string>Ctrl+Shift+7, /</string>
             </property>
            </widget>
           </item>
@@ -882,7 +982,7 @@
            <number>0</number>
           </property>
           <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton_30">
+           <widget class="QPushButton" name="commaButton">
             <property name="maximumSize">
              <size>
               <width>78</width>
@@ -891,6 +991,9 @@
             </property>
             <property name="text">
              <string>,</string>
+            </property>
+            <property name="shortcut">
+             <string>,, ,</string>
             </property>
            </widget>
           </item>
@@ -903,6 +1006,28 @@
    </layout>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>cButton</tabstop>
+  <tabstop>oneButton</tabstop>
+  <tabstop>twoButton</tabstop>
+  <tabstop>threeButton</tabstop>
+  <tabstop>fourButton</tabstop>
+  <tabstop>fiveButton</tabstop>
+  <tabstop>sixButton</tabstop>
+  <tabstop>sevenButton</tabstop>
+  <tabstop>eightButton</tabstop>
+  <tabstop>nineButton</tabstop>
+  <tabstop>zeroButton</tabstop>
+  <tabstop>equalButton</tabstop>
+  <tabstop>backspaceButton</tabstop>
+  <tabstop>ceButton</tabstop>
+  <tabstop>percentButton</tabstop>
+  <tabstop>divideButton</tabstop>
+  <tabstop>multiplyButton</tabstop>
+  <tabstop>minusButton</tabstop>
+  <tabstop>plusButton</tabstop>
+  <tabstop>commaButton</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
