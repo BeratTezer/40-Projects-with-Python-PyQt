@@ -1,2 +1,2 @@
-# 40-Projects-with-Python-PyQt
+# 40-Projects-with-Python-PyQt ![Visitors](https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Fgithub.com%2FBeratTezer%2F40-Projects-with-Python-PyQt&label=Curious%20Counter&countColor=%230037ff&style=flat&labelStyle=none) ![GitHub Repo stars](https://img.shields.io/github/stars/BeratTezer/40-Projects-with-Python-PyQt?label=%E2%AD%90%20Found%20Precious%20%E2%AD%90)
  This repository will contain my PyQt projects. My goal is 40 projects.
