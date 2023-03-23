@@ -11,32 +11,32 @@ class Calculator(QtWidgets.QMainWindow):
         self.ui.setupUi(self)
     
         # Variables
-        self.screenText = ""
+        self.screenText = " "
         self.calculation = 0
         
         # Configurations
         self.ui.screenLabel.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight | QtCore.Qt.AlignmentFlag.AlignCenter)
     
         # Connections between buttons and functions
-        # self.ui.zeroButton.clicked.connect()
-        # self.ui.oneButton.clicked.connect()
-        # self.ui.twoButton.clicked.connect()
-        # self.ui.threeButton.clicked.connect()
-        # self.ui.fourButton.clicked.connect()
-        # self.ui.fiveButton.clicked.connect()
-        # self.ui.sixButton.clicked.connect()
-        # self.ui.sevenButton.clicked.connect()
-        # self.ui.eightButton.clicked.connect()
-        # self.ui.nineButton.clicked.connect()
-        # self.ui.backspaceButton.clicked.connect()
-        # self.ui.multiplyButton.clicked.connect()
-        # self.ui.divideButton.clicked.connect()
-        # self.ui.plusButton.clicked.connect()
-        # self.ui.minusButton.clicked.connect()
-        # self.ui.percentButton.clicked.connect()
-        # self.ui.commaButton.clicked.connect()
+        self.ui.zeroButton.clicked.connect(lambda: self.printScreen("0"))
+        self.ui.oneButton.clicked.connect(lambda: self.printScreen("1"))
+        self.ui.twoButton.clicked.connect(lambda: self.printScreen("2"))
+        self.ui.threeButton.clicked.connect(lambda: self.printScreen("3"))
+        self.ui.fourButton.clicked.connect(lambda: self.printScreen("4"))
+        self.ui.fiveButton.clicked.connect(lambda: self.printScreen("5"))
+        self.ui.sixButton.clicked.connect(lambda: self.printScreen("6"))
+        self.ui.sevenButton.clicked.connect(lambda: self.printScreen("7"))
+        self.ui.eightButton.clicked.connect(lambda: self.printScreen("8"))
+        self.ui.nineButton.clicked.connect(lambda: self.printScreen("9"))
+        self.ui.backspaceButton.clicked.connect(lambda: self.printScreen("#"))
+        self.ui.multiplyButton.clicked.connect(lambda: self.printScreen(" * "))
+        self.ui.divideButton.clicked.connect(lambda: self.printScreen(" / "))
+        self.ui.plusButton.clicked.connect(lambda: self.printScreen(" + "))
+        self.ui.minusButton.clicked.connect(lambda: self.printScreen(" - "))
+        self.ui.percentButton.clicked.connect(lambda: self.printScreen(" % "))
+        self.ui.commaButton.clicked.connect(lambda: self.printScreen(","))
         
-        self.ui.equalButton.clicked.connect(self.printScreen)
+        # self.ui.equalButton.clicked.connect(self.printScreen)
         # self.ui.equalButton.clicked.connect(self.equal(self.screenText, 0))
     
     # Functions
@@ -46,10 +46,17 @@ class Calculator(QtWidgets.QMainWindow):
         pass
     
     def printScreen(self, input):
-        if (len(self.screenText) == 0):
-            if (int(input) not in range(10)):
-                self.screenText += str(input)
-        self.ui.screenLabel.setText(self.screenText)
+        cont = 0
+        if len(input) == 3 and len(self.screenText) == 1:
+            if input in [" * ", " - ", " + ", " / ", " % "]:
+                cont = 1
+        if input == "," and list(self.screenText)[-1] == " ":
+            input = "0,"
+        if input in [" * ", " - ", " + ", " / ", " % "] and list(self.screenText)[-1] == " ":
+            cont = 1
+        if cont == 0:
+            self.screenText += str(input)
+            self.ui.screenLabel.setText(self.screenText)
     
     def collect(self):
         pass
